@@ -6,12 +6,15 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class InstructorApp {
-
+    static Scanner in = new Scanner(System.in);
     public static void main(String[] args) { 
         ArrayList<Nomination> nominationsInfo = loadInfo();
+        int i = 0;
         for (Nomination nom : nominationsInfo) {
+            System.out.println("[" + i + "]");
             System.out.println("-- NOMINATOR INFORMATION --");
             System.out.println("Name: " + nom.name);
             System.out.println("Email: " + nom.email);
@@ -30,6 +33,26 @@ public class InstructorApp {
             System.out.println("Additional Information: " + nom.nomineeAdditionalInfo);
             System.out.println("Current Acceptance Status: " + nom.accepted);
             System.out.println("---------------------------");
+            i += 1;
+        }
+        while (true) {
+            System.out.print("Would you like to approve[Y] or disapprove[N] someone or [Q]uit: ");
+            final String approve = in.nextLine().toLowerCase();
+            if (approve.equals("y")) {
+                System.out.print("Choose their respective number: ");
+                final Integer num = Integer.parseInt(in.nextLine());
+                nominationsInfo.get(num).accepted = true;
+                System.out.println(nominationsInfo.get(num).nomineeName + " Approved: " + nominationsInfo.get(num).accepted);
+            }
+            if (approve.equals("n")) {
+                System.out.print("Choose their respective number: ");
+                final Integer num = Integer.parseInt(in.nextLine());
+                nominationsInfo.get(num).accepted = false;
+                System.out.println(nominationsInfo.get(num).nomineeName + " Approved: " + nominationsInfo.get(num).accepted);
+            }
+            if (approve.equals("q")) {
+                break;
+            }
         }
     }
 
