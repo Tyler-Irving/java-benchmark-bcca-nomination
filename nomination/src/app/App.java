@@ -13,120 +13,58 @@ public class App {
 
     public static void main(String[] args) {
         ArrayList<Nomination> nominationsInfo = loadInfo();
-        System.out.println("These input fields are for the nominator's information.");
-        String name = nominatorsName();
-        System.out.println("------------------------------");
-        String email = nominatorsEmail();
-        System.out.println("------------------------------");
-        String schoolDistrict = nominatorsSchoolDistrict();
-        System.out.println("------------------------------");
-        String position = nominatorsPosition();
-        System.out.println("------------------------------");
-        String relationshipToNominee = nominatorsRelationshipToNominee();
-        System.out.println("------------------------------");
-        System.out.println("These input fields are for the nominee's information.");
-        String nomineeName = nomineeName();
-        System.out.println("------------------------------");
-        String nomineeContactInfo = nomineeContactInfo();
-        System.out.println("------------------------------");
-        String nomineeGradDate = nomineeGradDate();
-        System.out.println("------------------------------");
-        String nomineeAptitude = nomineeAptitude();
-        System.out.println("------------------------------");
-        String nomineePerserverance = nomineePerserverance();
-        System.out.println("------------------------------");
-        String nomineeDedication = nomineeDedication();
-        System.out.println("------------------------------");
-        String nomineeWorkEthic = nomineeWorkEthic();
-        System.out.println("------------------------------");
-        String nomineeAdditionalInfo = nomineeAdditionalInfo();
-        System.out.println("------------------------------");
-        int nomineeAge = nomineeAge();
-        System.out.println("------------------------------");
-        String accepted = "No";
-        Nomination newNomination = new Nomination(name, email, schoolDistrict, position, relationshipToNominee, nomineeName, nomineeAge, nomineeContactInfo, nomineeGradDate, nomineeAptitude, nomineePerserverance, nomineeDedication, nomineeWorkEthic, nomineeAdditionalInfo, accepted);
+        Nomination newNomination = getNomination();
         nominationsInfo.add(newNomination);
         saveInfo(nominationsInfo);
     }
 
-    public static String nominatorsName() {
+    public static Nomination getNomination() {
+        System.out.println("-- Nominator Information --");
         System.out.println("Name:");
         String name = in.nextLine();
-        return name;
-    }
-    public static String nominatorsEmail() {
+        System.out.println("------------------------------");
         System.out.println("Email:");
         String email = in.nextLine();
-        return email;
-    }
-    public static String nominatorsSchoolDistrict() {
+        System.out.println("------------------------------");
         System.out.println("School District:");
         String schoolDistrict = in.nextLine();
-        return schoolDistrict;
-    }
-    public static String nominatorsPosition() {
+        System.out.println("------------------------------");
         System.out.println("Position:");
         String position = in.nextLine();
-        return position;
-    }
-    public static String nominatorsRelationshipToNominee() {
+        System.out.println("------------------------------");
         System.out.println("Relationship to nominee:");
         String relationshipToNominee = in.nextLine();
-        return relationshipToNominee;
-    }
-
-    public static String nomineeName() {
+        System.out.println("------------------------------");
+        System.out.println("--- Nominee Information ---");
         System.out.println("Name:");
         String nomineeName = in.nextLine();
-        return nomineeName;
-    }
-
-    public static Integer nomineeAge() {
+        System.out.println("------------------------------");
         System.out.println("Age:");
-        int nomineeAge = in.nextInt();
-        return nomineeAge;
-    }
-
-    public static String nomineeContactInfo() {
+        String nomineeAge = in.nextLine();
+        System.out.println("------------------------------");
         System.out.println("Number or Email:");
         String nomineeContactInfo = in.nextLine();
-        return nomineeContactInfo;
-    }
-
-    public static String nomineeGradDate() {
+        System.out.println("------------------------------");
         System.out.println("Expected Graduation Date:");
         String nomineeGradDate = in.nextLine();
-        return nomineeGradDate;
-    }
-
-    public static String nomineeAptitude() { 
+        System.out.println("------------------------------");
         System.out.println("Aptitude: Do you have any experiences when this student has demonstrated a strong ability to think logically and/or strategically?");
         String nomineeAptitude = in.nextLine();
-        return nomineeAptitude;
-    }
-
-    public static String nomineePerserverance() {
+        System.out.println("------------------------------");
         System.out.println("Perserverance: Is there any evidence of the applicant being engaged in something they are passionate about?");
         String nomineePerserverance = in.nextLine();
-        return nomineePerserverance;
-    }
-
-    public static String nomineeDedication() {
+        System.out.println("------------------------------");
         System.out.println("Dedication: Do you think the applicant would be able to reliably attend the program for five days a week in Water Valley?");
         String nomineeDedication = in.nextLine();
-        return nomineeDedication;
-    }
-
-    public static String nomineeWorkEthic() {
+        System.out.println("------------------------------");
         System.out.println("Work Ethic / Heart: Why does this student deserve a position at Base Camp?");
         String nomineeWorkEthic = in.nextLine();
-        return nomineeWorkEthic;
-    }
-
-    public static String nomineeAdditionalInfo() {
+        System.out.println("------------------------------");
         System.out.println("Anything else you'd like to share about this nominee?");
         String nomineeAdditionalInfo = in.nextLine();
-        return nomineeAdditionalInfo;
+        System.out.println("------------------------------");
+        String accepted = "No";
+        return new Nomination(name, email, schoolDistrict, position, relationshipToNominee, nomineeName, nomineeAge, nomineeContactInfo, nomineeGradDate, nomineeAptitude, nomineePerserverance, nomineeDedication, nomineeWorkEthic, nomineeAdditionalInfo, accepted);
     }
 
     private static void saveInfo(ArrayList<Nomination> nominationsInfo) {

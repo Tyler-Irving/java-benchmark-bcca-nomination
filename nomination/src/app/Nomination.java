@@ -10,7 +10,7 @@ public class Nomination implements Serializable {
     String position;
     String relationshipToNominee;
     String nomineeName;
-    int nomineeAge;
+    String nomineeAge;
     String nomineeContactInfo;
     String nomineeGradDate;
     String nomineeAptitude;
@@ -21,7 +21,7 @@ public class Nomination implements Serializable {
     String accepted;
 
     public Nomination(String name, String email, String schoolDistrict, String position, String relationshipToNominee,
-            String nomineeName, Integer nomineeAge, String nomineeContactInfo, String nomineeGraduationDate,
+            String nomineeName, String nomineeAge, String nomineeContactInfo, String nomineeGraduationDate,
             String nomineeAptitude, String nomineePerserverance, String nomineeDedication, String nomineeWorkEthic,
             String nomineeAdditionalInfo, String accepted) {
         this.name = name;
