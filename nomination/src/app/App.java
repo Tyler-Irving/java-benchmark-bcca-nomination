@@ -47,7 +47,6 @@ public class App {
         Nomination newNomination = new Nomination(name, email, schoolDistrict, position, relationshipToNominee, nomineeName, nomineeAge, nomineeContactInfo, nomineeGradDate, nomineeAptitude, nomineePerserverance, nomineeDedication, nomineeWorkEthic, nomineeAdditionalInfo, accepted);
         nominationsInfo.add(newNomination);
         saveInfo(nominationsInfo);
-        
     }
 
     public static String nominatorsName() {

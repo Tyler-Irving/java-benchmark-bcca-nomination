@@ -12,7 +12,7 @@ public class Nomination implements Serializable {
     String nomineeName;
     Integer nomineeAge;
     String nomineeContactInfo;
-    String nomineeGraduationDate;
+    String nomineeGradDate;
     String nomineeAptitude;
     String nomineePerserverance;
     String nomineeDedication;
@@ -32,7 +32,7 @@ public class Nomination implements Serializable {
         this.nomineeName = nomineeName;
         this.nomineeAge = nomineeAge;
         this.nomineeContactInfo = nomineeContactInfo;
-        this.nomineeGraduationDate = nomineeGraduationDate;
+        this.nomineeGradDate = nomineeGraduationDate;
         this.nomineeAptitude = nomineeAptitude;
         this.nomineePerserverance = nomineePerserverance;
         this.nomineeDedication = nomineeDedication;
