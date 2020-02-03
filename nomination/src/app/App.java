@@ -41,9 +41,9 @@ public class App {
         System.out.println("------------------------------");
         String nomineeAdditionalInfo = nomineeAdditionalInfo();
         System.out.println("------------------------------");
-        Integer nomineeAge = nomineeAge();
+        int nomineeAge = nomineeAge();
         System.out.println("------------------------------");
-        Boolean accepted = false;
+        String accepted = "No";
         Nomination newNomination = new Nomination(name, email, schoolDistrict, position, relationshipToNominee, nomineeName, nomineeAge, nomineeContactInfo, nomineeGradDate, nomineeAptitude, nomineePerserverance, nomineeDedication, nomineeWorkEthic, nomineeAdditionalInfo, accepted);
         nominationsInfo.add(newNomination);
         saveInfo(nominationsInfo);

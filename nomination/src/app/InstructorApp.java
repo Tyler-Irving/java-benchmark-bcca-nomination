@@ -41,13 +41,13 @@ public class InstructorApp {
             if (approve.equals("y")) {
                 System.out.print("Choose their respective number: ");
                 final Integer num = Integer.parseInt(in.nextLine());
-                nominationsInfo.get(num).accepted = true;
+                nominationsInfo.get(num).accepted = "Yes";
                 System.out.println(nominationsInfo.get(num).nomineeName + " Approved: " + nominationsInfo.get(num).accepted);
             }
             if (approve.equals("n")) {
                 System.out.print("Choose their respective number: ");
                 final Integer num = Integer.parseInt(in.nextLine());
-                nominationsInfo.get(num).accepted = false;
+                nominationsInfo.get(num).accepted = "No";
                 System.out.println(nominationsInfo.get(num).nomineeName + " Approved: " + nominationsInfo.get(num).accepted);
             }
             if (approve.equals("q")) {
